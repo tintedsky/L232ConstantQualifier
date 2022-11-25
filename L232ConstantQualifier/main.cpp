@@ -8,6 +8,18 @@
 #include <iostream>
 using namespace std;
 
+class ConstDemo{
+public:
+    int x=10;
+    int y=20;
+    
+    void display() const /* const here guarantee the value cannot be modified inside the function body. */
+    {
+        // x++; here is wrong because the const keywork in the function signature. 
+        cout<<"x:"<<x<<endl<<"y:"<<y<<endl;
+    }
+};
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -30,6 +42,9 @@ int main(int argc, const char * argv[]) {
     
     int x3=13, y3=23;
     const int * const p3 = &x3;
+    
+    ConstDemo cd;
+    cd.display();
     
     return 0;
 }

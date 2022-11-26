@@ -54,5 +54,16 @@ int main(int argc, const char * argv[]) {
     
     displayValues(x3, y3);
     
+    /**x4 can increase by itself, but the const int pointer p4 cannot change the value of x4 */
+    int x4=14, y4=24;
+    const int* p4=&x4;
+    cout<<*p4<<endl;
+    ++x4;
+    cout<<*p4<<endl;
+
+    const int x5 = 15;
+    /* int* p5=&x5; normal pointer cannot be assigned with a const integer value's address */
+    
+    
     return 0;
 }

@@ -15,10 +15,16 @@ public:
     
     void display() const /* const here guarantee the value cannot be modified inside the function body. */
     {
-        // x++; here is wrong because the const keywork in the function signature. 
+        // x++; here is wrong because the const keywork in the function signature.
         cout<<"x:"<<x<<endl<<"y:"<<y<<endl;
     }
 };
+
+
+void displayValues(const int &x, const int &y){
+     /* y--; from the parameter list, y is the reference of a constant integer */
+    cout<<"From "<<__FUNCTION__<<": x3:"<<x<<" y3:"<<y<<endl;
+}
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -45,6 +51,8 @@ int main(int argc, const char * argv[]) {
     
     ConstDemo cd;
     cd.display();
+    
+    displayValues(x3, y3);
     
     return 0;
 }
